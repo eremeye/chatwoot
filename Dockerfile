@@ -44,8 +44,6 @@ COPY app/services/message_templates/hook_execution_service.rb ./app/services/mes
 COPY config/locales/ru.yml ./config/locales/ru.yml
 COPY javascript/survey/i18n/locale/ru.json ./javascript/survey/i18n/locale/ru.json
 
-RUN cat app/services/message_templates/hook_execution_service.rb
-
 #COPY Gemfile Gemfile.lock ./
 
 # natively compile grpc and protobuf to support alpine musl (dialogflow-docker workflow)
