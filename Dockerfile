@@ -42,7 +42,7 @@ WORKDIR /app
 
 COPY app/services/message_templates/hook_execution_service.rb ./app/services/message_templates/hook_execution_service.rb
 COPY config/locales/ru.yml ./config/locales/ru.yml
-COPY javascript/survey/i18n/locale/ru.json ./javascript/survey/i18n/locale/ru.json
+COPY app/javascript/survey/i18n/locale/ru.json ./app/javascript/survey/i18n/locale/ru.json
 
 #COPY Gemfile Gemfile.lock ./
 
