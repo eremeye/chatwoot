@@ -4,6 +4,8 @@ class MessageTemplates::HookExecutionService
     def perform
       #@eremeye: run if agent bot is active
       #return if inbox.agent_bot_inbox&.active?
+      #@eremeye: don't run if nobody assigned 
+      return unless conversation.assignee.present?
       return if conversation.campaign.present?
   
       trigger_templates
