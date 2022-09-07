@@ -43,6 +43,7 @@ WORKDIR /app
 COPY app/services/message_templates/hook_execution_service.rb ./app/services/message_templates/hook_execution_service.rb
 COPY config/locales/ru.yml ./config/locales/ru.yml
 COPY app/javascript/survey/i18n/locale/ru.json ./app/javascript/survey/i18n/locale/ru.json
+COPY app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue .app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue
 
 #COPY Gemfile Gemfile.lock ./
 
