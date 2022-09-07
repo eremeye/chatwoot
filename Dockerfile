@@ -33,17 +33,16 @@ RUN apk add --no-cache \
 # eremeye: download chatwoot source
 RUN version='2.7.0'; \
     curl -o chatwoot-$version.zip -fL "https://github.com/chatwoot/chatwoot/archive/refs/tags/v$version.zip"; \
-    unzip chatwoot-$version.zip; \
+    unzip -q chatwoot-$version.zip; \
     mv chatwoot-$version/ /app ; \
-    rm chatwoot-$version.zip chatwoot-$version; \
-    ls 
+    rm chatwoot-$version.zip chatwoot-$version
 
 WORKDIR /app
 
 COPY app/services/message_templates/hook_execution_service.rb ./app/services/message_templates/hook_execution_service.rb
 COPY config/locales/ru.yml ./config/locales/ru.yml
 COPY app/javascript/survey/i18n/locale/ru.json ./app/javascript/survey/i18n/locale/ru.json
-COPY app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue .app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue
+COPY app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue ./app/javascript/dashboard/components/widgets/DashboardApp/Frame.vue
 
 #COPY Gemfile Gemfile.lock ./
 
@@ -61,6 +60,7 @@ RUN if [ "$RAILS_ENV" = "production" ]; then \
   fi
 
 #COPY package.json yarn.lock ./
+
 RUN yarn install
 
 #COPY . /app
