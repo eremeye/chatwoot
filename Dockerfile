@@ -31,7 +31,7 @@ RUN apk add --no-cache \
   && gem install bundler
 
 # eremeye: download chatwoot source
-RUN version='2.8.1'; \
+RUN version='2.7.0'; \
     curl -o chatwoot-$version.zip -fL "https://github.com/chatwoot/chatwoot/archive/refs/tags/v$version.zip"; \
     unzip chatwoot-$version.zip; \
     mv chatwoot-$version/ /app ; \
